@@ -5,15 +5,15 @@
 class Goris < Formula
   desc "A tool to get gopher image!"
   homepage "https://github.com/borischen0203/goris"
-  version "0.2.2"
+  version "0.2.3"
   license "MIT"
   bottle :unneeded
   depends_on :macos
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/borischen0203/goris/releases/download/v0.2.2/goris_0.2.2_macOS-64bit.tar.gz"
-      sha256 "49f0ecb1c2d480183dba1eefc5d75b10928bf8cbb68440751e801b2f80454ed4"
+      url "https://github.com/borischen0203/goris/releases/download/v0.2.3/goris_0.2.3_macOS-64bit.tar.gz"
+      sha256 "5f57675d385258a0e61aade4fdc4d98738cde1bd4ad9d2e96ee3a0a620e22582"
     end
   end
 
