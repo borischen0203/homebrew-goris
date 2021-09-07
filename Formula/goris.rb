@@ -5,40 +5,33 @@
 class Goris < Formula
   desc "A tool to get gopher image!"
   homepage "https://github.com/borischen0203/goris"
-  version "0.2.5"
+  version "0.3.6"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/borischen0203/goris/releases/download/v0.2.5/goris_0.2.5_macOS-64bit.tar.gz"
-      sha256 "e50042c975d203f0760017efa2c0b6d81ac1c6452d85585d5e8d330c663c6f15"
+      url "https://github.com/borischen0203/goris/releases/download/v0.3.6/goris_0.3.6_macOS-64bit.tar.gz"
+      sha256 "618cb9ef6713bd94ed025542f65de673558b87b2318788ff1eac5c8629272926"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/borischen0203/goris/releases/download/v0.2.5/goris_0.2.5_macOS-ARM64.tar.gz"
-      sha256 "f117e248712cc7c66d8ecb7c32dc9aca198e8a89577dfd55c7027ba2c3f0f89a"
+      url "https://github.com/borischen0203/goris/releases/download/v0.3.6/goris_0.3.6_macOS-ARM64.tar.gz"
+      sha256 "83f4c8631eee43fe2f665f82aaeec8bc90673aa1b0650f27567f080d0f99bd09"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/borischen0203/goris/releases/download/v0.2.5/goris_0.2.5_Linux-64bit.tar.gz"
-      sha256 "53e491ce5ff6637d90422bb769fab98aeb1813aa98baeac8b83969de10b1b1da"
+      url "https://github.com/borischen0203/goris/releases/download/v0.3.6/goris_0.3.6_Linux-64bit.tar.gz"
+      sha256 "780ffbde30a8cf481439956e59162a9796104d04ee1cde6831114c48a745160a"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/borischen0203/goris/releases/download/v0.2.5/goris_0.2.5_Linux-ARM64.tar.gz"
-      sha256 "e0ae692c4e52d468ded80afbdeefdcdcc1902419c1f56170ce5328fec5f6909c"
+      url "https://github.com/borischen0203/goris/releases/download/v0.3.6/goris_0.3.6_Linux-ARM64.tar.gz"
+      sha256 "f849ac121fddb64e96ad19866e6b7de7d7b2aefb2cc0bdf494b3e72b283e69d5"
     end
   end
-
-  depends_on "go" => :optional
-  depends_on "git"
 
   def install
     bin.install "goris"
-  end
-
-  test do
-    system "#{bin}/goreleaser -v"
   end
 end
