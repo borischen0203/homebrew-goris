@@ -5,29 +5,15 @@
 class Goris < Formula
   desc "A tool to get gopher image!"
   homepage "https://github.com/borischen0203/goris"
-  version "0.3.8"
+  version "0.4.5"
   license "MIT"
   bottle :unneeded
+  depends_on :macos
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/borischen0203/goris/releases/download/v0.3.8/goris_0.3.8_macOS-64bit.tar.gz"
-      sha256 "d2eb50c915c6d5622e4e7c433681f23ea7c029fb423333eb9b28f2fe04b503c8"
-    end
-    if Hardware::CPU.arm?
-      url "https://github.com/borischen0203/goris/releases/download/v0.3.8/goris_0.3.8_macOS-ARM64.tar.gz"
-      sha256 "baa31970b6f09de6aa956a915d0d8181a1a3c4871bc62e859d0ec84f06c428dc"
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/borischen0203/goris/releases/download/v0.3.8/goris_0.3.8_Linux-64bit.tar.gz"
-      sha256 "45abdeff9b1e129d83f7665429ab882c2e283d7c4230f4142ab08c7d3866591a"
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/borischen0203/goris/releases/download/v0.3.8/goris_0.3.8_Linux-ARM64.tar.gz"
-      sha256 "eab02728eec77fc82a27955ce522e26feaeec2152435040c2653a36bb4bc18fe"
+      url "https://github.com/borischen0203/goris/releases/download/v0.4.5/goris_0.4.5_macOS-64bit.tar.gz"
+      sha256 "2bcb58fb0037dd586582bd27497fc4c2d04f752eb7c9ef67ae648dea75cf5864"
     end
   end
 
