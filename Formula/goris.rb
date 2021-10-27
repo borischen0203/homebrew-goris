@@ -5,33 +5,44 @@
 class Goris < Formula
   desc "A tool to get gopher image!"
   homepage "https://github.com/borischen0203/goris"
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/borischen0203/goris/releases/download/v1.0.0/goris_1.0.0_macOS-64-bit.tar.gz"
-      sha256 "9f70d4c4bf55df1753dc5eeca3176137c8bb78a35302ce95bec466173f2836bd"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/borischen0203/goris/releases/download/v1.0.0/goris_1.0.0_macOS-ARM64.tar.gz"
-      sha256 "2e3cde66528572343b452d0802dabd180533e7f3c82301000ffbe0c1965daca2"
+      url "https://github.com/borischen0203/goris/releases/download/v1.0.1/goris_1.0.1_macOS-ARM64.tar.gz"
+      sha256 "cc80d6335dd12b59db1d7a15f82d564d93c7b70cd8259902128a7cd238824ece"
+
+      def install
+        bin.install "goris"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/borischen0203/goris/releases/download/v1.0.1/goris_1.0.1_macOS-64-bit.tar.gz"
+      sha256 "da1f01b9337069b9177498f0a7ee5aa3f1f2167f697bdf03808d50465e6ef920"
+
+      def install
+        bin.install "goris"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/borischen0203/goris/releases/download/v1.0.0/goris_1.0.0_Linux-64-bit.tar.gz"
-      sha256 "3e68f9ada0a4d3b169f631193403849b8031391adf407da73f6d22aeef6705c5"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/borischen0203/goris/releases/download/v1.0.0/goris_1.0.0_Linux-ARM64.tar.gz"
-      sha256 "a24e8525c052cbc759a30fed54fe41ab74922e11ba790467be0c084a80583489"
-    end
-  end
+      url "https://github.com/borischen0203/goris/releases/download/v1.0.1/goris_1.0.1_Linux-ARM64.tar.gz"
+      sha256 "e3b66563babb7674bb52de7a818e04420fc0cd0d7e6c7c45fae41e05b132d42d"
 
-  def install
-    bin.install "goris"
+      def install
+        bin.install "goris"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/borischen0203/goris/releases/download/v1.0.1/goris_1.0.1_Linux-64-bit.tar.gz"
+      sha256 "13c93e749c9b41f13e3d4af968ecf075761d7dc9dda7001adc29734080a2cce4"
+
+      def install
+        bin.install "goris"
+      end
+    end
   end
 end
