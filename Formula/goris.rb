@@ -5,21 +5,21 @@
 class Goris < Formula
   desc "A tool to get gopher image!"
   homepage "https://github.com/borischen0203/goris"
-  version "1.0.1"
+  version "1.0.3"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/borischen0203/goris/releases/download/v1.0.1/goris_1.0.1_macOS-ARM64.tar.gz"
-      sha256 "cc80d6335dd12b59db1d7a15f82d564d93c7b70cd8259902128a7cd238824ece"
+    if Hardware::CPU.intel?
+      url "https://github.com/borischen0203/goris/releases/download/v1.0.3/goris_1.0.3_macOS-64-bit.tar.gz"
+      sha256 "444dbfe5d449d6a7052924fadee225a912b6f8f232c50cba579c5cc12360da2e"
 
       def install
         bin.install "goris"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/borischen0203/goris/releases/download/v1.0.1/goris_1.0.1_macOS-64-bit.tar.gz"
-      sha256 "da1f01b9337069b9177498f0a7ee5aa3f1f2167f697bdf03808d50465e6ef920"
+    if Hardware::CPU.arm?
+      url "https://github.com/borischen0203/goris/releases/download/v1.0.3/goris_1.0.3_macOS-ARM64.tar.gz"
+      sha256 "d6893b01dc537a74fe4864ee6e85fbe62cc51b479bb0e44e2331a9c4f3af7b3a"
 
       def install
         bin.install "goris"
@@ -28,17 +28,17 @@ class Goris < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/borischen0203/goris/releases/download/v1.0.1/goris_1.0.1_Linux-ARM64.tar.gz"
-      sha256 "e3b66563babb7674bb52de7a818e04420fc0cd0d7e6c7c45fae41e05b132d42d"
+    if Hardware::CPU.intel?
+      url "https://github.com/borischen0203/goris/releases/download/v1.0.3/goris_1.0.3_Linux-64-bit.tar.gz"
+      sha256 "38bdfb002c7f979f435befb730905e6e3e1b5e4a0f9033460924028cb8845dfd"
 
       def install
         bin.install "goris"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/borischen0203/goris/releases/download/v1.0.1/goris_1.0.1_Linux-64-bit.tar.gz"
-      sha256 "13c93e749c9b41f13e3d4af968ecf075761d7dc9dda7001adc29734080a2cce4"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/borischen0203/goris/releases/download/v1.0.3/goris_1.0.3_Linux-ARM64.tar.gz"
+      sha256 "ec02ed52b0e5ed528c3f8998223a61e04690d90a67650e86e6fdedfd966ddb69"
 
       def install
         bin.install "goris"
